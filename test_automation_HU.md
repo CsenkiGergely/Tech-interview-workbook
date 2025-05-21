@@ -166,25 +166,25 @@ Dinamikus: A dinamikus tesztelés célja annak biztosítása, hogy a rendszer m�
 <img src="https://media.licdn.com/dms/image/C4D12AQE3GOyVsZazOw/article-cover_image-shrink_600_2000/0/1583830696602?e=2147483647&v=beta&t=bYHbKyhMoWsMgtEug6eSf3m0db5ZtGEl437TeS1qkfI" alt="image" width="320" height="220">
 
 #### ✅ Melyik teszteseteket érdemes automatizálni és melyiket nem?
-Ismétlődő feladatok: Azokat a teszteket, amiket gyakran kell futtatni, például regressziós teszteket, mivel az automatizálás segít csökkenteni az időt és az emberi hibákat.
+-Ismétlődő feladatok
 
-Nagy adathalmazokkal végzett tesztek: Amikor több ezer adatot kell ellenőrizni, az automatizált tesztek gyorsabban végezhetik el a munkát.
+-Nagy adathalmazokkal végzett tesztek
 
-Komplex, sok lépést igénylő tesztek: Automatizált tesztekkel jobban kezelhetők a több lépést és interakciót tartalmazó műveletek.
+-Komplex, sok lépést igénylő tesztek
 
-Platform- és böngészők közötti tesztelés: Ha több különböző platformon vagy böngészőben kell tesztelni a rendszert, az automatizált tesztelés hatékony megoldást kínál.
+-Platform- és böngészők közötti tesztelés
 
-Regression tesztelés: Azok a tesztek, amelyek az új kódok integrálása után a régi funkcionalitást ellenőrzik.
+-Regression tesztelés
 
-Nem érdemes automatizálni:
+-Nem érdemes automatizálni
 
-Egyszeri tesztek: Ha egy teszt csak egyszer fut le, nincs értelme automatizálni, mivel a kezdeti beruházás nem térül meg.
+-Egyszeri tesztek
 
-Dizájn és UI/UX tesztelés: Az emberi szem és intuíció jobb az UI/UX tesztelésben, mivel az automatizált tesztek nem mindig tudják pontosan értékelni a felhasználói élményt.
+-Dizájn és UI/UX tesztelés
 
-Dynamic content tesztelése: Ha a weboldalon dinamikusan változó tartalom van (pl. időjárás előrejelzés, hírek), az automatizált tesztelés nehezebbé válik.
+-Dynamic content tesztelése
 
-Bonyolult hibaelhárítási tesztek: Az olyan tesztek, amelyek speciális környezetet igényelnek vagy hibák kezelésére vannak kitalálva, gyakran nem könnyen automatizálhatók.
+-Bonyolult hibaelhárítási tesztek
 
 
 
@@ -223,36 +223,36 @@ if __name__ == "__main__":
 
 
 #### ✅ Mi a Selenium, Selenium IDE és Selenium WebDriver?
-Selenium: A Selenium egy népszerű, nyílt forráskódú automatizálási keretrendszer, amelyet webalkalmazások tesztelésére használnak. Különböző programozási nyelvekkel (például Python, Java, C#, Ruby) kompatibilis, és lehetővé teszi a web böngészők automatizált vezérlését.
 
 Selenium IDE (Integrated Development Environment):
 
-A Selenium IDE egy böngészőbővítmény, amely lehetővé teszi a tesztek felvételét és lejátszását anélkül, hogy kódolni kellene.
+        A Selenium IDE egy böngészőbővítmény, amely lehetővé teszi a tesztek felvételét és lejátszását anélkül, hogy kódolni kellene.
 
 Főleg fejlesztők és tesztelők számára használható gyors prototípusok készítésére.
 
 A tesztet grafikus felületen rögzíthetjük és módosíthatjuk, de nem olyan rugalmas, mint a Selenium WebDriver.
 
+
 Selenium WebDriver:
 
-A Selenium WebDriver egy fejlettebb API, amely lehetővé teszi a weboldalak programozott vezérlését. Ezt a Selenium használatával írt tesztekhez használják.
+        A Selenium WebDriver egy fejlettebb API, amely lehetővé teszi a weboldalak programozott vezérlését. Ezt a Selenium használatával írt tesztekhez használják.
 
 A WebDriver közvetlenül irányítja a böngészőt, tehát nincs szükség egy másik rétegre (mint a Selenium RC esetében).
 
 A WebDriver segítségével könnyen kezelhetők különböző böngészők és platformok.
 
 #### ✅ Hogyan lehet azonosítani a webes elemeket?
-ID (azonosító): Az ID-k egyedi azonosítók minden HTML elemen belül. Ha egy elemnek van ID-je, az a legjobb módszer az azonosításra.
+ID (azonosító)
 
-Class Name (osztály név): Ha több elem is rendelkezik ugyanazzal az osztálynévvel, akkor egy listát kaphatunk, amit végig iterálhatunk.
+        -Class Name (osztály név)
 
-Name (név): A name attribútum is egy hasznos azonosító.
+Name (név)
 
-XPath: Az XPath segítségével a DOM struktúrában való navigálással találhatunk meg elemeket.
+        -XPath
 
-CSS Selector: CSS selektorokat is használhatunk, amelyek rugalmas módot biztosítanak az elemek azonosítására.
+        -CSS Selector
 
-Link Text / Partial Link Text: Ha egy elem hivatkozás, akkor a teljes vagy részleges szövege alapján is kereshetünk rá.
+Link Text / Partial Link Text
 
 #### ✅ Hogyan lehet várni az elemekre, és mi lehet a probléma? Gyűjtsd össze a lehetséges hibákat és okokat!
 
@@ -260,15 +260,15 @@ Webes tesztelésnél sokszor előfordul, hogy az elemek nem azonnal elérhetők,
 
 Statikus várakozás (Thread.sleep):
 
-Probléma: Ez a módszer nem túl hatékony, mivel a teszt a megadott időpontig folytatja, akkor is, ha az elem már elérhető, vagy éppen nem elérhető.
+        -Probléma
 
-Hiba: A túlzott statikus várakozás lassítja a tesztet, és nem garantálja, hogy az elem tényleg elérhetővé válik a megadott időpontig.
+        -Hiba
 
 Dinamikus várakozás (Explicit Wait):
 
-Javítás: Az explicit várakozás során meghatározhatjuk, hogy hány másodpercig várjon a teszt, és várja meg, hogy az elem megjelenjen vagy elérhetővé váljon egy feltétel alapján.
+        -Javítás
 
-Példa (Python + Selenium):
+Példa (Python + Selenium)
 
 python
 Másolás
@@ -285,19 +285,19 @@ wait = WebDriverWait(driver, 10)  # 10 másodpercig várunk
 element = wait.until(EC.presence_of_element_located((By.ID, "login_button")))
 Implicite várakozás:
 
-Probléma: Az implicite várakozás globálisan hat a tesztre, és minden egyes elem keresésekor alkalmazza, amit nem biztos, hogy minden tesztnél megfelelő.
+-Probléma
 
-Javítás: Használhatjuk akkor, ha az egész tesztesetben szeretnénk várakozási időt beállítani.
+-Javítás
 
-Lehetséges hibák és okok:
+-Lehetséges hibák és okok
 
-Elem nem található: A leggyakoribb hiba, amikor az elem, amire várunk, nem található meg a megadott locatorral, vagy nem töltődik be időben.
+-Elem nem található
 
-Nem megfelelő várakozási idő: Ha túl rövid az idő, a teszt nem találja meg az elemet, ha túl hosszú, akkor a teszt feleslegesen lassú lesz.
+-Nem megfelelő várakozási idő
 
-Synchronizációs problémák: Az oldal dinamikus tartalommal rendelkezik (pl. AJAX hívások), és a Selenium nem várja meg a tartalom betöltődését, így a teszt hibát ad.
+-Synchronizációs problémák
 
-Elem láthatatlansága: Az elem már létezik, de nem látható vagy nem interakcióképes (pl. egy modal ablak mögött van).
+-Elem láthatatlansága
 
 #### ✅ Hasonlítsd össze a POM és a Keyword Driven Testing megközelítéseket!
 POM (Page Object Model):
